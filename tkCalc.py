@@ -1,7 +1,9 @@
 from tkinter import *
+from tkinter import font
 
 # Window that holds all of your widgets
 window = Tk()
+window.configure(background='black')
 
 # Defines the title of our window
 window.title("Calculator")
@@ -32,41 +34,42 @@ def clearText():
     topTxt = ""
     top.configure(text = topTxt)
 
+btnFont = font.Font(size=20, weight='bold', family='Helvetica')
 # The label to hold the visuals for the calculation
-top = Label(window, text=topTxt)
+top = Label(window, text=topTxt, background='black', foreground='white', font=btnFont)
 
 # Buttons for numbers 7-9
-btn7 = Button(window, text="7", command=lambda: addNumber(btn7['text']))
-btn8 = Button(window, text="8", command=lambda: addNumber(btn8['text']))
-btn9 = Button(window, text="9", command=lambda: addNumber(btn9['text']))
+btn7 = Button(window, bg='orange', font=btnFont, text="7", command=lambda: addNumber(btn7['text']))
+btn8 = Button(window, bg='orange', font=btnFont, text="8", command=lambda: addNumber(btn8['text']))
+btn9 = Button(window, bg='orange', font=btnFont, text="9", command=lambda: addNumber(btn9['text']))
 
 # Buttons for numbers 4-6
-btn4 = Button(window, text="4", command=lambda: addNumber(btn4['text']))
-btn5 = Button(window, text="5", command=lambda: addNumber(btn5['text']))
-btn6 = Button(window, text="6", command=lambda: addNumber(btn6['text']))
+btn4 = Button(window, bg='orange', font=btnFont, text="4", command=lambda: addNumber(btn4['text']))
+btn5 = Button(window, bg='orange', font=btnFont, text="5", command=lambda: addNumber(btn5['text']))
+btn6 = Button(window, bg='orange', font=btnFont, text="6", command=lambda: addNumber(btn6['text']))
 
 # Buttons for numbers 1-3
-btn1 = Button(window, text="1", command=lambda: addNumber(btn1['text']))
-btn2 = Button(window, text="2", command=lambda: addNumber(btn2['text']))
-btn3 = Button(window, text="3", command=lambda: addNumber(btn3['text']))
+btn1 = Button(window, bg='orange', font=btnFont, text="1", command=lambda: addNumber(btn1['text']))
+btn2 = Button(window, bg='orange', font=btnFont, text="2", command=lambda: addNumber(btn2['text']))
+btn3 = Button(window, bg='orange', font=btnFont, text="3", command=lambda: addNumber(btn3['text']))
 
 # Button for number 0
-btn0 = Button(window, text="0", command=lambda: addNumber(btn0['text']))
+btn0 = Button(window, bg='orange', font=btnFont, text="0", command=lambda: addNumber(btn0['text']))
 
 # Button for decimal point
-btnDec = Button(window, text=".", command=lambda: addNumber(btnDec['text']))
+btnDec = Button(window, bg='orange', font=btnFont, text=".", command=lambda: addNumber(btnDec['text']))
 
 # Buttons for plus and equal signs
-btnPlus = Button(window, text="+", command=lambda: addNumber(btnPlus['text']))
-btnEqual = Button(window, text="=", command=calculate)
+btnPlus = Button(window, bg='orange', font=btnFont, text="+", command=lambda: addNumber(btnPlus['text']))
+btnEqual = Button(window, bg='orange', font=btnFont, text="=", command=calculate)
 
 # Buttons for division, multiplication, and subtraction signs
-btnDiv = Button(window, text="/", command=lambda: addNumber(btnDiv['text']))
-btnMult = Button(window, text="*", command=lambda: addNumber(btnMult['text']))
-btnMinus = Button(window, text="-", command=lambda: addNumber(btnMinus['text']))
+btnDiv = Button(window, bg='orange', font=btnFont, text="/", command=lambda: addNumber(btnDiv['text']))
+btnMult = Button(window, bg='orange', font=btnFont, text="*", command=lambda: addNumber(btnMult['text']))
+btnMinus = Button(window, bg='orange', font=btnFont, text="-", command=lambda: addNumber(btnMinus['text']))
 
 # Button to clear the topTxt
-btnClear = Button(window, text="Clear", command=clearText)
+btnClear = Button(window, bg='orange', font=btnFont, text="Clear", command=clearText)
 
 
 # Holds the information on how to allocate space in our grid
@@ -99,7 +102,7 @@ btnMinus.grid(column=2, row=5, sticky=W+E, columnspan=2)
 btnClear.grid(column=0, row=7, sticky=W+E, columnspan = 5)
 
 # Sets the window size to 200x200
-window.geometry("200x200")
+window.geometry("165x375")
 
 # Executes the code in our window
 window.mainloop()
